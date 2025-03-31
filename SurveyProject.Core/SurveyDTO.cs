@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SurveyProject.Core
 {
-    internal class SurveyDTO
+    public class SurveyDTO
     {
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public List<QuestionDTO> Questions { get; set; }
     }
 }
