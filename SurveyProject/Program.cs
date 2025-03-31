@@ -30,7 +30,7 @@ namespace SurveyProject
             app.MapRazorComponents<App>()
                 .AddInteractiveServerRenderMode();
 
-            app.Run(); fff
+            app.Run();
         }
     }
 }
