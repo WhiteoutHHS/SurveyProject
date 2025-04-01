@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\DTO\Surveys\" />
+    <Folder Include="Components\DTO\User\" />
+  </ItemGroup>
+
 </Project>
