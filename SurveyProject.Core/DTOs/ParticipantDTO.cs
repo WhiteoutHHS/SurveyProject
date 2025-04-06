@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace SurveyProject.Core.DTOs
 {
-    public class AnswerDTO
+    public class ParticipantDTO
     {
-        public int Id { get; set; }
-        public SurveyDTO Survey { get; set; }
+        public UserDTO Creator { get; set; }
+        public RoomDTO Room { get; set; }
+        public int ParticipantType { get; set; }
     }
 }
-
-//public string? Text { get; set; }//
