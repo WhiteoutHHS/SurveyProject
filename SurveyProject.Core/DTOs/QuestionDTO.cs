@@ -12,7 +12,7 @@ namespace SurveyProject.Core.DTOs
         public string? Text { get; set; }
         public int AnswerType { get; set; }
         public SurveyDTO Survey { get; set; }
+        public List<AnswerDTO>? Answers { get; set; }
     }
 }
 
-//public List<AnswerDTO>? Answers { get; set; }//

@@ -12,5 +12,3 @@ namespace SurveyProject.Core.DTOs
         public SurveyDTO Survey { get; set; }
     }
 }
-
-//public string? Text { get; set; }//
