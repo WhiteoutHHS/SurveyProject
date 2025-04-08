@@ -1,7 +1,58 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 mb-4">Присоединяйтесь к нашему community</h1>
+        
+        <div class="poll-categories mb-5">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-success text-white h-100">
+                        <div class="card-body">
+                            <h3>Опросы зелёный</h3>
+                            <p class="card-text">Участвуйте в наших популярных опросах</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-warning text-dark h-100">
+                        <div class="card-body">
+                            <h3>Опросы желтый</h3>
+                            <p class="card-text">Новые опросы, требующие вашего мнения</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-danger text-white h-100">
+                        <div class="card-body">
+                            <h3>Опросы красный</h3>
+                            <p class="card-text">Срочные опросы по актуальным темам</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="create-poll mb-5">
+            <h2 class="mb-3">Создай свой опрос!!</h2>
+            <a href="/create-poll" class="btn btn-primary btn-lg">Создать опрос</a>
+        </div>
+     
+    </div>
+</div>
 
-Welcome to your new app.
+<style>
+    .card {
+        transition: transform 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .create-poll {
+        padding: 2rem;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+    }
+</style>
