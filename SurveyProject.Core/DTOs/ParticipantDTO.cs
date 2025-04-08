@@ -10,6 +10,6 @@ namespace SurveyProject.Core.DTOs
     {
         public UserDTO Creator { get; set; }
         public RoomDTO Room { get; set; }
-        public int ParticipantType { get; set; }
+        public enum ParticipantType { get; set; }
     }
 }
