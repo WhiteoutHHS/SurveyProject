@@ -5,11 +5,11 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyProject", "SurveyProject\SurveyProject.csproj", "{EFAC6244-3ABE-4120-A08C-B553D5FC59E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyProject.Core", "SurveyProject.Core\SurveyProject.Core.csproj", "{5ADF77A2-E071-4E60-95FF-3B9A5B9D9A0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyProject.Core", "SurveyProject.Core\SurveyProject.Core.csproj", "{5ADF77A2-E071-4E60-95FF-3B9A5B9D9A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyProject.DAL", "SurveyProject.Dal\SurveyProject.DAL.csproj", "{1DED162D-9D0E-40B2-9A33-547E371401E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyProject.DAL", "SurveyProject.Dal\SurveyProject.DAL.csproj", "{1DED162D-9D0E-40B2-9A33-547E371401E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyProject.BLL", "SurveyProject.BLL\SurveyProject.BLL.csproj", "{B1FC7BA9-85A9-49CB-879D-263D40D3B1BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyProject.BLL", "SurveyProject.BLL\SurveyProject.BLL.csproj", "{B1FC7BA9-85A9-49CB-879D-263D40D3B1BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
