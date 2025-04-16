@@ -1,0 +1,67 @@
+﻿@page "/SurveyCreation"
+
+<div id="SurveyCreation">
+	<h1>Создайте свой опрос!</h1>
+	<div class="SurveyData">
+		<p>Введите название опроса:</p>
+		<textarea maxlength ="50"/>
+		<p>Введите описание опроса:</p>
+		<textarea maxlength ="300"/>
+	</div>
+	<div class="SurveyStatus">
+		<select>
+			<option value="private">Приватный</option>
+			<option value="public">Публичный</option>
+		</select>
+	</div>
+	<h2>Добавьте вопросы:</h2>
+	<div class="QuestionName">
+		<p>Введите название вопроса:</p>
+		<textarea/>
+	</div>
+	<div>
+	<label for="QuestionType">Выберете тип вопроса</label>
+	<select id="QuestionType">
+		<option value="single">Одиночный выбор</option>
+		<option value="multiple">Множественный выбор</option>
+		<option value="open">Открытый вопрос</option>
+		<option value="scale">Шкала оценки</option>
+	</select>
+	</div>
+	<div class="Answer">
+		<p>Введите ответ:</p>
+		<textarea/>
+	</div>
+</div>
+
+<button onclick="duplicateElement()">+</button>
+
+<script>
+	function duplicateElement() {
+		const container = document.getElementById("SurveyCreation");
+		const original = document.querySelector(".Answer");
+		const clone = original.cloneNode(true);
+		container.appendChild(clone);
+	}
+</script>
+
+<h3>Задайте диапазон шкалы:</h3>
+
+<label for="minValue">Начальное значение:</label>
+<input type="number" id="minValue" @bind="minValue" />
+
+<label for="maxValue">Конечное значение:</label>
+<input type="number" id="maxValue" @bind="maxValue" />
+
+<h3>Оцените от @minValue до @maxValue:</h3>
+
+<input type="range" min="@minValue" max="@maxValue" @bind="rating" />
+<input type="number" min="@minValue" max="@maxValue" @bind="rating" />
+
+<p>Текущее значение: @rating</p>
+
+@code {
+	private int minValue = 1;
+	private int maxValue = 10;
+	private int rating = 5;
+}
