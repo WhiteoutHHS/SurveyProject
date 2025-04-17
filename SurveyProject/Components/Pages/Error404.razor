@@ -1,5 +1,31 @@
-﻿<h3>Error404</h3>
+﻿@page "/Error404"
 
+@rendermode InteractiveServer
+<html>
+<head>
+    <PageTitle>Ошибка!</PageTitle>
+    <style>
+ /*        .Copy404{
+            width: 50px;
+            height: 50px; */
+        /* } */
+        body {
+            margin: 0px;
+            padding: 0px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <p style="margin-left: 900px; margin-top: 250px; font-size:180px; color: red;">Ошибка!</p>
+    <p style="margin-left: 760px; margin-top: 25px; font-size:95px; color: white;">Страница не найдена...</p>
+    <div style="display:flex;">
+@*         <button onclick="copyText" class="Copy404">Copy</button> *@
+        <p style="margin-left: 850px; margin-top: 20px; font-size:40px; color: red">Код: 404</p>
+        <p onclick="window.location.href='https://localhost:7019/';" style="width: 550px; height: 50px; margin-left: 300px; margin-top: 20px; font-size:35px; text-align:center; background-color: black; color: red;">На главную</p>
+    </div>
+</body>
+</html>
 @code {
 
 }
