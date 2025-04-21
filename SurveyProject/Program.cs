@@ -25,6 +25,7 @@ namespace SurveyProject
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+            app.UseStatusCodePagesWithReExecute("/Error404");
             app.UseAntiforgery();
 
             app.MapRazorComponents<App>()
