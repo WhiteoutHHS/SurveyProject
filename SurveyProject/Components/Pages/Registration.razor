@@ -1,0 +1,128 @@
+﻿@page "/Registration"
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">Регистрация</h1>
+            <form id="registrationForm" method="post">
+
+                <div class="mb-3">
+                    <label for="email" class="form-label" id="emailLabel">Эл. почта <span id="emailStar" class="text-danger">*</span></label>
+                    <input type="email" class="form-control rounded-pill border border-primary shadow-sm" id="email" placeholder="Gmail" aria-describedby="emailHelp" oninput="validateField('email', 'emailStar', 'emailLabel')">
+                    <div id="emailHelp" class="form-text">Укажите ваш gmail</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label" id="passwordLabel">Пароль <span id="passwordStar" class="text-danger">*</span></label>
+                    <input type="password" class="form-control rounded-pill border border-primary shadow-sm" id="password" placeholder="Пароль" aria-describedby="passwordHelp" oninput="validateField('password', 'passwordStar', 'passwordLabel')">
+                    <div id="passwordHelp" class="form-text">Придумайте надежный пароль</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nickname" class="form-label" id="nicknameLabel">Ваш ник <span id="nicknameStar" class="text-danger">*</span></label>
+                    <input type="text" class="form-control rounded-pill border border-primary shadow-sm" id="nickname" placeholder="Никнейм" aria-describedby="nicknameHelp" oninput="validateField('nickname', 'nicknameStar', 'nicknameLabel')" maxlength="10">
+                    <div id="nicknameHelp" class="form-text">Укажите ваш никнейм</div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-primary rounded-pill shadow" onclick="validateForm()">Завершить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .input-group-text {
+        border-left: 0;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .error {
+        color: red !important;
+    }
+
+    .form-control {
+        color: black;
+        background-color: #EBF1FB;
+
+    .label-error {
+        color: red;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+<script>
+    function validateField(inputId, starId, labelId) {
+        let input = document.getElementById(inputId);
+        let star = document.getElementById(starId);
+        let label = document.getElementById(labelId);
+
+        if (input.value.trim() === "") {
+            star.style.display = "inline";
+        } else {
+            star.style.display = "none";
+            label.classList.remove("label-error");
+        }
+    }
+
+    function validateForm() {
+        let emailInput = document.getElementById("email");
+        let passwordInput = document.getElementById("password");
+        let nicknameInput = document.getElementById("nickname");
+
+        let emailLabel = document.getElementById("emailLabel");
+        let passwordLabel = document.getElementById("passwordLabel");
+        let nicknameLabel = document.getElementById("nicknameLabel");
+
+        let emailStar = document.getElementById("emailStar");
+        let passwordStar = document.getElementById("passwordStar");
+        let nicknameStar = document.getElementById("nicknameStar");
+
+        emailLabel.classList.remove("label-error");
+        passwordLabel.classList.remove("label-error");
+        nicknameLabel.classList.remove("label-error");
+
+        emailStar.style.display = 'none';
+        passwordStar.style.display = 'none';
+        nicknameStar.style.display = 'none';
+
+        let isValid = true;
+
+        if (emailInput.value.trim() === "") {
+            emailLabel.classList.add("label-error");
+            isValid = false;
+            emailStar.style.display = 'none';
+        }
+
+        if (passwordInput.value.trim() === "") {
+            passwordLabel.classList.add("label-error");
+            passwordStar.style.display = 'none';
+            isValid = false;
+        }
+
+        if (nicknameInput.value.trim() === "") {
+            nicknameLabel.classList.add("label-error");
+            nicknameStar.style.display = 'none';
+            isValid = false;
+        }
+
+        if (nicknameInput.value.length > 10) {
+            nicknameLabel.classList.add("label-error");
+            isValid = false;
+            nicknameStar.style.display = 'none';
+        }
+
+        if (!isValid) {
+            alert("Please fill in all required fields.");
+        } else {
+            alert("Form is valid!");
+        }
+    }
+</script>
