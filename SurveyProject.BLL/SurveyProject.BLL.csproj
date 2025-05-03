@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SurveyProject.Core\SurveyProject.Core.csproj" />
+    <ProjectReference Include="..\SurveyProject.Dal\SurveyProject.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

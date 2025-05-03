@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SurveyProject.Core.Enums
 {
-    public enum Participant
+    public enum ParticipantType
     {
         Creator = 0,
         Participant = 1,

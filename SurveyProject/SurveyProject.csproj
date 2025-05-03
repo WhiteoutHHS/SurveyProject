@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SurveyProject.BLL\SurveyProject.BLL.csproj" />
+    <ProjectReference Include="..\SurveyProject.Core\SurveyProject.Core.csproj" />
+  </ItemGroup>
+
 </Project>
