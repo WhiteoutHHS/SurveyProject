@@ -6,7 +6,6 @@
             <h1 class="text-center mb-4">Вход</h1>
 
             <form id="loginForm">
-                <!-- Добавил id для формы -->
                 <div class="mb-3">
                     <label for="email" class="form-label" id="emailLabel">Эл. почта <span id="emailStar" class="text-danger">*</span></label>
                     <input type="email" class="form-control rounded-pill border border-primary shadow-sm" id="email" placeholder="Gmail" aria-describedby="emailHelp" oninput="validateField('email', 'emailStar', 'emailLabel')">
@@ -21,7 +20,6 @@
 
                 <div class="d-grid gap-2">
                     <button type="button" class="btn btn-primary rounded-pill shadow" id="completeButton">
-                        <!-- Добавил id кнопке -->
                         Завершить <span class="oi oi-arrow-right" aria-hidden="true"></span>
                     </button>
                 </div>
@@ -49,7 +47,7 @@
     }
 
     .error {
-        color: red; /* Изменил на красный, чтобы соответствовало */
+        color: red;
     }
 
     .form-control {
@@ -61,7 +59,6 @@
         font-size: 0.8em;
     }
 
-    /* Добавляем стиль для красного текста */
     .red-text {
         color: red;
     }
@@ -76,10 +73,10 @@
 
         if (input.value.trim() === "") {
             star.style.display = "inline";
-            label.classList.add("error"); // Добавляем класс ошибки
+            label.classList.add("error");
         } else {
             star.style.display = "none";
-            label.classList.remove("error"); // Убираем класс ошибки, если поле заполнено
+            label.classList.remove("error");
         }
     }
 
@@ -104,38 +101,29 @@
         if (emailInput.value.trim() === "") {
             emailLabel.classList.add("error");
             isValid = false;
-            emailStar.style.display = 'inline'; // Показываем звездочку, если поле пустое
+            emailStar.style.display = 'inline';
         }
 
         if (passwordInput.value.trim() === "") {
             passwordLabel.classList.add("error");
-            passwordStar.style.display = 'inline'; // Показываем звездочку, если поле пустое
+            passwordStar.style.display = 'inline';
             isValid = false;
         }
 
         if (!isValid) {
             alert("Пожалуйста, заполните все обязательные поля.");
-            return false; // Возвращаем false, если форма невалидна
+            return false;
         }
 
-        return true; // Возвращаем true, если форма валидна
+        return true;
     }
 
-    // Получаем ссылку на кнопку
     const completeButton = document.getElementById("completeButton");
 
-    // Добавляем обработчик события на кнопку
     completeButton.addEventListener("click", function() {
-        // Проверяем валидность формы
         if (validateForm()) {
-            // Если форма валидна, делаем что-то (например, отправляем данные)
-            // Здесь можно добавить код для отправки данных формы на сервер
-
-            // Удаляем красный цвет с label поля email
             const emailLabel = document.getElementById("emailLabel");
             emailLabel.classList.remove("error");
-
-            // Удаляем красный цвет с label поля password
             const passwordLabel = document.getElementById("passwordLabel");
             passwordLabel.classList.remove("error");
         }
