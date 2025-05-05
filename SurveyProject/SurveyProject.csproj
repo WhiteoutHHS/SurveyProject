@@ -19,4 +19,8 @@
     <Folder Include="Components\Element\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SurveyProject.NewBll\SurveyProject.NewBll.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SurveyProject.Core.DTOs;
+using SurveyProject.NewCore.DTOs;
 
 
 namespace SurveyProject.NewDal
