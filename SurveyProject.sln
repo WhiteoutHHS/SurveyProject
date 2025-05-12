@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyProject.DAL", "Survey
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyProject.BLL", "SurveyProject.BLL\SurveyProject.BLL.csproj", "{B1FC7BA9-85A9-49CB-879D-263D40D3B1BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{6D45D494-DFC8-4C53-9768-8E29F1DCC8D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{6D45D494-DFC8-4C53-9768-8E29F1DCC8D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
