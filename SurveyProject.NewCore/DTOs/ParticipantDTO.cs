@@ -1,7 +1,7 @@
-﻿using SurveyProject.Core.Enums;
+﻿using SurveyProject.NewCore.Enums;
 
 
-namespace SurveyProject.Core.DTOs
+namespace SurveyProject.NewCore.DTOs
 {
 	public class ParticipantDTO
 	{

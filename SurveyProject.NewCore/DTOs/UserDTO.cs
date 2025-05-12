@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SurveyProject.Core.DTOs
+namespace SurveyProject.NewCore.DTOs
 {
     public class UserDTO
     {

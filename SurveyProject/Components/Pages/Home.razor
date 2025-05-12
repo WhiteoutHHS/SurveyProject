@@ -1,90 +1,13 @@
 ﻿@page "/"
+@using SurveyProject.Components.Element
+
+<Toolbar />
 
 <div class="container">
-    <header>
-        <div class="header-title">
-            Главная страница
-        </div>
-        <div class="header-buttons">
-            <button class="button create-survey-button">Создать опрос</button>
-            <button class="button create-survey-button">Создать комнату</button>
-            <button class="button create-survey-button">Зарегистрироваться/Войти</button>
-        </div>
-    </header>
-
     <main>
         <div class="content-wrapper">
+            <h1>Васаб</h1>
+            
         </div>
     </main>
 </div>
-
-<style>
-    body {
-        font-family: sans-serif;
-        margin: 0;
-        background-color: #f0f0f0;
-        height: 100vh;
-    }
-
-    .container {
-        margin: 0 auto;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #ffffff;
-        padding: 15px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        flex-shrink: 0;
-    }
-
-    .header-title {
-        font-size: 1.5em;
-        font-weight: bold;
-    }
-
-    .header-buttons {
-        display: flex;
-        gap: 10px;
-    }
-
-    .button {
-        padding: 8px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.2s, color 0.2s;
-    }
-
-    /* Style for all buttons to match "Создать опрос" */
-    .create-survey-button {
-        background-color: #ADD8E6; /* Light blue background */
-        border: 1px solid #000080; /* Dark blue border */
-        color: #000000; /* Black text */
-        padding: 8px 15px;
-        transition: background-color 0.2s, color 0.2s;
-    }
-
-        .create-survey-button:hover {
-            background-color: #87CEEB; /* Lighter blue on hover */
-            color: #000000;
-        }
-
-    main {
-        padding: 20px;
-        flex-grow: 1;
-        overflow-y: auto;
-    }
-
-    .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-    }
-
-</style>

@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using SurveyProject.Core.DTOs;
+using SurveyProject.NewCore.DTOs;
 
 public class AnswerDTO
 {

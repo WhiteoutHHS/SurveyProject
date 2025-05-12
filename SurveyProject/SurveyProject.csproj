@@ -7,20 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Blazor.Bootstrap" Version="3.3.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Components\Element\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SurveyProject.NewBll\SurveyProject.NewBll.csproj" />
+    <ProjectReference Include="..\SurveyProject.NewCore\SurveyProject.NewCore.csproj" />
   </ItemGroup>
 
 </Project>
