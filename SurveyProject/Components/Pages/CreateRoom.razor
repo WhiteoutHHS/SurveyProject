@@ -10,6 +10,25 @@
             padding: 0px;
             background: white;
         }
+        .roundedStyle {
+            border-width: 3px;
+            border-color: #305BAB;
+            width: 370px;
+            height: 70px;
+            border-radius: 10px;
+            background: #C6DCFF;
+            text-align: center;
+            font-size: 40px;
+        }
+        .cardStyle {
+            margin-top: 25px;
+            margin-left: 20px;
+            text-align: center;
+            font-size: 40px;
+            width: 370px;
+            height: 70px;
+            background: #C6DCFF;
+        }
     </style>
 </head>
 <body>
@@ -18,7 +37,12 @@
 
         <div>
             <p style="font-size: 40px; margin-left: 90px; margin-top: 25px;">Введите название комнаты:</p>
-            <input style="margin-left: 90px; margin-top: 25px; height: 40px; width: 510px; background: " placeholder="Название комнаты">
+            <input style="margin-left: 90px; margin-top: 10px; height: 40px; width: 510px; background: #EBF1FB;" class="roundedStyle;" placeholder="Название комнаты">
+            <p style="font-size: 40px; margin-left: 90px; margin-top: 25px;">Выберите доступность:</p>
+            <select style="margin-left: 90px; margin-top: 10px; height: 40px; width: 510px; background: #EBF1FB;" class="roundedStyle;">
+                <option>Приватная</option>
+                <option>Публичная</option>
+            </select>
         </div>
     </form>
 </body>
