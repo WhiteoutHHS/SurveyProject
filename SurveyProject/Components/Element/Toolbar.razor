@@ -1,82 +1,121 @@
 ﻿@using SurveyProject.NewCore.DTOs
+@using SurveyProject.Components.Element
 
 <div class="toolbar">
     <div class="logo">
-        <a href="/">Главная страница</a>
+        <a href="/">Главная страница</a>  <!-- Создаем ссылку на главную страницу -->
     </div>
 
+
     <div class="nav-buttons">
-        <button class="nav-button" href="/Registration">Создать опрос</button>
-        <button class="nav-button" href="/Registration">Создать комнату</button>
+        <button class="nav-button" href="/Add">Создать опрос</button> <!-- Создаем кнопку для создания опроса -->
+        <button class="nav-button" href="/ADD">Создать комнату</button>  <!-- Создаем кнопку для создания комнаты -->
     </div>
 
     <div class="auth-section">
-        <button class="auth-button" href="/Registration">Войти/Зарегистрироваться</button>
+        <button class="auth-button" id="togglePanelButton">Войти/Зарегистрироваться</button> <!-- Создаем кнопку для отображения панели авторизации/регистрации. У неё есть id="togglePanelButton", что позволит получить к ней доступ из JavaScript. -->
     </div>
+</div>
+
+<div id="quickAccessPanel" class="quick-access-panel">
+    <LogRegPanel />  <!--  Вставляем компонент LogRegPanel (предполагается, что он отвечает за форму входа/регистрации). Панель скрыта изначально -->
 </div>
 
 <style>
     .toolbar {
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+        background-color: #f8f9fa; /* Устанавливаем цвет фона панели навигации */
+        padding: 10px 20px; /* Устанавливаем отступы внутри панели */
+        display: flex; /* Используем flexbox для выравнивания элементов */
+        justify-content: space-between; /* Располагаем элементы по краям */
+        align-items: center; /* Выравниваем элементы по вертикали */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
     }
 
     .logo {
-    font-weight: bold;
-    font-size: 20px;
+        font-weight: bold; /* Делаем текст логотипа жирным */
+        font-size: 20px; /* Устанавливаем размер шрифта логотипа */
     }
 
-    .logo a {
-    color: inherit;
-    text-decoration: none;
-    }
+        .logo a {
+            color: inherit; /* Наследуем цвет текста от родителя */
+            text-decoration: none; /* Убираем подчеркивание у ссылки */
+        }
 
     .nav-buttons {
-    display: flex;
-    gap: 15px;
+        display: flex; /* Используем flexbox для выравнивания кнопок */
+        gap: 15px; /* Добавляем отступ между кнопками */
     }
 
     .nav-button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background-color 0.3s;
+        padding: 8px 15px; /* Устанавливаем отступы внутри кнопки */
+        background-color: #007bff; /* Устанавливаем цвет фона кнопки */
+        color: white; /* Устанавливаем цвет текста кнопки */
+        border: none; /* Убираем рамку */
+        border-radius: 4px; /* Скругляем углы кнопки */
+        cursor: pointer; /* Меняем курсор при наведении */
+        text-decoration: none; /* Убираем подчеркивание */
+        font-size: 14px; /* Устанавливаем размер шрифта */
+        transition: background-color 0.3s; /* Добавляем плавную анимацию изменения цвета фона */
     }
 
-    .nav-button:hover {
-    background-color: #0056b3;
-    }
+        .nav-button:hover {
+            background-color: #0056b3; /* Изменяем цвет фона при наведении */
+        }
 
     .auth-section {
-    display: flex;
-    gap: 15px;
-    align-items: center;
+        display: flex; /* Используем flexbox для выравнивания элементов авторизации */
+        gap: 15px; /* Добавляем отступ между элементами */
+        align-items: center; /* Выравниваем элементы по вертикали */
     }
 
     .auth-button {
-    padding: 8px 15px;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background-color 0.3s;
+        padding: 8px 15px; /* Устанавливаем отступы внутри кнопки авторизации */
+        background-color: #6c757d; /* Устанавливаем цвет фона кнопки авторизации */
+        color: white; /* Устанавливаем цвет текста кнопки авторизации */
+        border: none; /* Убираем рамку */
+        border-radius: 4px; /* Скругляем углы кнопки авторизации */
+        cursor: pointer; /* Меняем курсор при наведении */
+        text-decoration: none; /* Убираем подчеркивание */
+        font-size: 14px; /* Устанавливаем размер шрифта */
+        transition: background-color 0.3s; /* Добавляем плавную анимацию изменения цвета фона */
     }
 
-    .auth-button:hover {
-    background-color: #5a6268;
+        .auth-button:hover {
+            background-color: #5a6268; /* Изменяем цвет фона при наведении */
+        }
+
+
+    .quick-access-panel {
+        position: fixed; /* Фиксированное положение панели */
+        top: 20; /* Отступ сверху */
+        right: 20px;
+        right: -250px; /* Изначально панель скрыта справа */
+        width: 210px; /* Ширина панели */
+        height: 13vh; /* Высота панели (20% от высоты viewport) */
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.9); /* Белый цвет с прозрачностью */
+        backdrop-filter: blur(10px); /* Эффект размытия фона позади панели */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Тень слева от панели */
+        transition: right 0.3s ease-in-out; /* Анимация плавного появления/скрытия панели */
+        z-index: 1000; /* Обеспечивает отображение поверх других элементов */
+        display: flex; /* Используем flexbox для центрирования контента */
+        justify-content: center; /* Центрируем контент по горизонтали */
+        align-items: center; /* Центрируем контент по вертикали */
     }
+
+        .quick-access-panel.open {
+            right: 0; /* Когда класс 'open' добавлен, панель появляется справа */
+        }
 </style>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () { // Ждем загрузки DOM-дерева
+        const toggleButton = document.getElementById('togglePanelButton'); // Находим кнопку для открытия/закрытия панели
+        const panel = document.getElementById('quickAccessPanel'); // Находим панель
+
+        toggleButton.addEventListener('click', function () { // Добавляем обработчик события клика на кнопку
+            panel.classList.toggle('open'); //  При клике на кнопку переключаем класс 'open' у панели (добавляем, если его нет, удаляем, если есть)
+        });
+    });
+</script>
