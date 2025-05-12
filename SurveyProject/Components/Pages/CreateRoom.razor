@@ -54,11 +54,17 @@
                 <div class="roundedStyle" style="scrollbar-color: #658FD0 #7AAEFD; overflow: auto; margin-left: 90px; margin-top: 10px; width: 450px; height: 750px; border-radius: 50px; background: #A0C6FF;">
                     <div class="cardStyle">qqq</div>
                 </div>
+                <div class="roundedStyle" id="rectangle" style="margin-left: 10px; margin-top: 50px; width: 610px;">Код комнаты:@roomCode</div>
+            </div>
+            <div>
+                <p style="font-size: 40px; margin-left: 90px; margin-top: 25px;">Готово? Жми сюда:</p>
+                <button style="font-size: 40px; margin-left: 90px; margin-top: 25px;" class="roundedStyle">Создать</button>
             </div>
         </div>
     </form>
 </body>
 </html>
 @code {
-
+    [Parameter]
+    public string roomCode { get; set; } = "454545";
 }
